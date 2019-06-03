@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App</title>
+<!--    <link rel="stylesheet" type="text/css" href="/css/style.css">-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+
+<div class="jumbotron">
+<div class="row">
+    <div class="col-md-2"></div>
+
+     
+    <div class="col-md-8">
+        <h2> Result:</h2>
+        
+        <fieldset>
+                <form action="/result" method="post">
+                  <input name="city" type="text" class="form-control" 
+                  value="<%= query %>" placeholder="Enter a City" required>
+                  <br/>
+                  <div class="text-center">
+                  <input type="submit" class=" pull-right btn btn-primary" value="Get Weather">
+                </div>
+        
+                </form>
+        
+         </fieldset>
+
+
+        <% if(weather !== null){ %>
+            <p><%= weather %></p>
+          <% } %>
+  
+          <% if(error !== null){ %>
+            <p><%= error %></p>
+          <% } %>
+
+
+      </fieldset>
+    </div>
+
+    <div class="col-md-2"></div>
+</div>
+
+
+</div>
+
+    </div>
+  </body>
+</html>
